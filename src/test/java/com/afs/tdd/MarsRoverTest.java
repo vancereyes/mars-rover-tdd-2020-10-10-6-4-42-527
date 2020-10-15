@@ -28,4 +28,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationY());
         assertEquals("W", marsRover.getHeading());
     }
+
+    
 }
