@@ -116,7 +116,7 @@ class MarsRoverTest {
     @Test
     void should_have_x_negative1_y_0_heading_W_when_command_M_given_x_0_y_0_heading_W() {
         //given
-        MarsRover marsRover = new MarsRover(0,0,"E");
+        MarsRover marsRover = new MarsRover(0,0,"W");
         //when
         marsRover.executesCommands("M");
         //then
