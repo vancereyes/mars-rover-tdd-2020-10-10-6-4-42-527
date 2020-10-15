@@ -10,6 +10,7 @@ public class MarsRover {
     public static final String NORTH = "N";
     public static final String WEST = "W";
     public static final String EAST = "E";
+    public static final String SOUTH = "S";
     private int locationX;
     private int locationY;
     private String heading;
@@ -65,7 +66,8 @@ public class MarsRover {
     private void move() {
         if (heading.equals(NORTH)) {
             locationY += 1;
-        }
+        }if (heading.equals(SOUTH)){
+            locationY -= 1;
         }
 
     }
