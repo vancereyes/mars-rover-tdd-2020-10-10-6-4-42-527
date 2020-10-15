@@ -90,7 +90,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_have_x_0_y_0_heading_N_when_command_L_given_x_0_y_0_heading_E() {
+    void should_have_x_0_y_0_heading_E_when_command_L_given_x_0_y_0_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"E");
         //when
@@ -99,6 +99,18 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
         assertEquals("N", marsRover.getHeading());
+    }
+
+    @Test
+    void should_have_x_0_y_0_heading_E_when_command_R_given_x_0_y_0_heading_S() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"E");
+        //when
+        marsRover.executesCommands("R");
+        //then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals("S", marsRover.getHeading());
     }
 
 
