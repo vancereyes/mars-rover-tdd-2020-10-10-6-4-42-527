@@ -66,6 +66,7 @@ public class MarsRover {
         if (heading.equals(NORTH)) {
             locationY += 1;
         }
+        }
 
     }
 }
