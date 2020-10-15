@@ -98,7 +98,7 @@ class MarsRoverTest {
         //then
         assertEquals(0, marsRover.getLocationX());
         assertEquals(0, marsRover.getLocationY());
-        assertEquals("L", marsRover.getHeading());
+        assertEquals("N", marsRover.getHeading());
     }
 
 
