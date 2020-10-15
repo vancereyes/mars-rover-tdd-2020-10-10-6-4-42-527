@@ -36,7 +36,7 @@ public class MarsRover {
             move();
         } if (command.equals("L")){
             turnLeft();
-        }
+        } if (command.equals("R")){}
 
     }
 
