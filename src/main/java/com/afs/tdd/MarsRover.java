@@ -9,6 +9,7 @@ public class MarsRover {
     public static final String RIGHT = "R";
     public static final String NORTH = "N";
     public static final String WEST = "W";
+    public static final String EAST = "E";
     private int locationX;
     private int locationY;
     private String heading;
@@ -51,7 +52,7 @@ public class MarsRover {
 
     private void turnRight() {
         if (heading.equals(NORTH)){
-            heading = "E";
+            heading = EAST;
         }
     }
 
