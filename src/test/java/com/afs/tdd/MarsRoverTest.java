@@ -5,16 +5,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarsRoverTest {
+
+    public static final String MOVE = "M";
+    public static final int ZERO = 0;
+    public static final int ONE = 1;
+    public static final String NORTH = "N";
+    public static final String WEST = "W";
+
     @Test
     void should_have_x_0_y_1_heading_N_when_command_M_given_x_0_y_0_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
-        marsRover.executesCommands("M");
+        marsRover.executesCommands(MOVE);
         //then
-        assertEquals(0, marsRover.getLocationX());
-        assertEquals(1, marsRover.getLocationY());
-        assertEquals("N", marsRover.getHeading());
+        assertEquals(ZERO, marsRover.getLocationX());
+        assertEquals(ONE, marsRover.getLocationY());
+        assertEquals(NORTH, marsRover.getHeading());
     }
 
     @Test
@@ -24,9 +31,9 @@ class MarsRoverTest {
         //when
         marsRover.executesCommands("L");
         //then
-        assertEquals(0, marsRover.getLocationX());
-        assertEquals(0, marsRover.getLocationY());
-        assertEquals("W", marsRover.getHeading());
+        assertEquals(ZERO, marsRover.getLocationX());
+        assertEquals(ZERO, marsRover.getLocationY());
+        assertEquals(WEST, marsRover.getHeading());
     }
 
     @Test
@@ -148,8 +155,6 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationY());
         assertEquals("N", marsRover.getHeading());
     }
-
-
 
 
 

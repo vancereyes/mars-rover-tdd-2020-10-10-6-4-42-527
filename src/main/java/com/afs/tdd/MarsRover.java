@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class MarsRover {
 
-    public static final String MOVE = "M";
-    public static final String LEFT = "L";
-    public static final String RIGHT = "R";
-    public static final String NORTH = "N";
-    public static final String WEST = "W";
-    public static final String EAST = "E";
-    public static final String SOUTH = "S";
+    private static final String MOVE = "M";
+    private static final String LEFT = "L";
+    private static final String RIGHT = "R";
+    private static final String NORTH = "N";
+    private static final String WEST = "W";
+    private static final String EAST = "E";
+    private static final String SOUTH = "S";
     private int locationX;
     private int locationY;
     private String heading;
@@ -35,17 +35,17 @@ public class MarsRover {
 
     public void executesCommands(String commands) {
         Arrays.asList(commands.split(""))
-                .forEach(this::executesCommand);
+                .forEach(command -> this.executesCommand(command));
     }
 
     private void executesCommand(String command) {
         if (command.equals(MOVE)) {
             move();
         }
-        if (command.equals(LEFT)) {
+        else if (command.equals(LEFT)) {
             turnLeft();
         }
-        if (command.equals(RIGHT)) {
+        else if (command.equals(RIGHT)) {
             turnRight();
         }
 
@@ -54,11 +54,11 @@ public class MarsRover {
     private void turnRight() {
         if (heading.equals(NORTH)){
             heading = EAST;
-        } if(heading.equals(SOUTH)){
+        } else if(heading.equals(SOUTH)){
             heading = WEST;
-        } if(heading.equals(EAST)){
+        } else if(heading.equals(EAST)){
             heading = SOUTH;
-        } if(heading.equals(WEST)){
+        } else if(heading.equals(WEST)){
             heading = NORTH;
         }
     }
@@ -66,11 +66,11 @@ public class MarsRover {
     private void turnLeft() {
         if (heading.equals(NORTH)) {
             heading = WEST;
-        } if (heading.equals(SOUTH)){
+        } else if (heading.equals(SOUTH)){
             heading = EAST;
-        } if (heading.equals(EAST)){
+        } else if (heading.equals(EAST)){
             heading = NORTH;
-        } if (heading.equals(WEST)){
+        } else if (heading.equals(WEST)){
             heading = SOUTH;
         }
     }
@@ -78,11 +78,11 @@ public class MarsRover {
     private void move() {
         if (heading.equals(NORTH)) {
             locationY += 1;
-        }if (heading.equals(SOUTH)){
+        }else if (heading.equals(SOUTH)){
             locationY -= 1;
-        }if (heading.equals(EAST)){
+        }else if (heading.equals(EAST)){
             locationX += 1;
-        } if (heading.equals(WEST)){
+        } else if (heading.equals(WEST)){
             locationX -= 1;
         }
 
