@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarsRoverTest {
     @Test
-    void should_have_x_0_y_1_heading_N_when_move_M_given_x_0_y_0_heading_N() {
+    void should_have_x_0_y_1_heading_N_when_command_M_given_x_0_y_0_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0,0,"N");
         //when
@@ -15,5 +15,17 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getLocationX());
         assertEquals(1, marsRover.getLocationY());
         assertEquals("N", marsRover.getHeading());
+    }
+
+    @Test
+    void should_have_x_0_y_0_heading_N_when_command_L_given_x_0_y_0_heading_N() {
+        //given
+        MarsRover marsRover = new MarsRover(0,0,"N");
+        //when
+        marsRover.executesCommands("L");
+        //then
+        assertEquals(0, marsRover.getLocationX());
+        assertEquals(0, marsRover.getLocationY());
+        assertEquals("W", marsRover.getHeading());
     }
 }
