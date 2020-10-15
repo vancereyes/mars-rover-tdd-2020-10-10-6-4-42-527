@@ -58,6 +58,8 @@ public class MarsRover {
             heading = WEST;
         } if(heading.equals(EAST)){
             heading = SOUTH;
+        } if(heading.equals(WEST)){
+            heading = NORTH;
         }
     }
 
